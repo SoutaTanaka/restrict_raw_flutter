@@ -1,0 +1,23 @@
+include: package:flutter_lints/flutter.yaml
+
+plugins:
+  restrict_raw_flutter:
+    path: ../
+    diagnostics:
+      ban_text_widget: true
+      ban_container_widget: true
+      ban_elevated_button_widget: true
+      ban_text_button_widget: true
+      ban_outlined_button_widget: true
+      ban_icon_widget: true
+      ban_image_widget: true
+      ban_scaffold_widget: true
+      ban_appbar_widget: true
+      ban_listview_widget: true
+      ban_gridview_widget: true
+      ban_textfield_widget: true
+      ban_textformfield_widget: true
+      ban_card_widget: true
+      ban_gesture_detector_widget: true
+      ban_inkwell_widget: true
+
