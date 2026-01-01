@@ -14,6 +14,7 @@ import 'src/rules/ban_card_rule.dart';
 import 'src/rules/ban_gesture_detector_rule.dart';
 import 'src/rules/ban_inkwell_rule.dart';
 import 'src/rules/ban_colors_rule.dart';
+import 'src/rules/ban_color_rule.dart';
 
 // This variable name must be "plugin"
 final plugin = RestrictRawFlutterPlugin();
@@ -42,5 +43,6 @@ class RestrictRawFlutterPlugin extends Plugin {
     registry.registerLintRule(BanGestureDetectorRule());
     registry.registerLintRule(BanInkWellRule());
     registry.registerLintRule(BanColorsRule());
+    registry.registerLintRule(BanColorRule());
   }
 }
