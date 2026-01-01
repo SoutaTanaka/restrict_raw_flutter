@@ -18,6 +18,7 @@ Dart 3.10で追加されたAnalyzer Plugins機能を利用しており、標準�
 - **ListView, GridView** - カスタムリスト/グリッドの使用を推奨
 - **TextField, TextFormField** - カスタム入力フィールドの使用を推奨
 - **Card** - カスタムカードの使用を推奨
+- **Colors** - デザインシステムのカスタム色定義の使用を推奨
 
 ## 環境要件
 
@@ -31,7 +32,7 @@ Dart 3.10で追加されたAnalyzer Plugins機能を利用しており、標準�
 ```yaml
 dev_dependencies:
   restrict_raw_flutter:
-    path: ../restrict_raw_flutter  # または適切なパス
+    version: ^0.0.1 # パッケージのバージョンを指定
 ```
 
 その後、`dart pub get` を実行してください。
@@ -63,6 +64,7 @@ plugins:
       ban_textfield_widget: true
       ban_textformfield_widget: true
       ban_card_widget: true
+      ban_colors: true
 ```
 
 ### 2. 解析の実行
