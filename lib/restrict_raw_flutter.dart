@@ -19,3 +19,4 @@ export 'src/rules/ban_textfield_rule.dart';
 export 'src/rules/ban_card_rule.dart';
 export 'src/rules/ban_gesture_detector_rule.dart';
 export 'src/rules/ban_inkwell_rule.dart';
+export 'src/rules/ban_colors_rule.dart';

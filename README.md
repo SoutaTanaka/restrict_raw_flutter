@@ -18,6 +18,7 @@ This package detects and displays warnings for the use of the following Flutter 
 - **ListView, GridView** - Recommends using custom list/grid components
 - **TextField, TextFormField** - Recommends using custom input fields
 - **Card** - Recommends using custom cards
+- **Colors** - Recommends using custom color definitions from your design system
 
 ## Requirements
 
@@ -31,7 +32,7 @@ Add the following dependency to your `pubspec.yaml`:
 ```yaml
 dev_dependencies:
   restrict_raw_flutter:
-    path: ../restrict_raw_flutter  # or appropriate path
+    version: ^0.0.1 # specify the package version
 ```
 
 Then run `dart pub get`.
@@ -63,6 +64,7 @@ plugins:
       ban_textfield_widget: true
       ban_textformfield_widget: true
       ban_card_widget: true
+      ban_colors: true
 ```
 
 ### 2. Run Analysis
