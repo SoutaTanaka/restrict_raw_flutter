@@ -19,6 +19,7 @@ This package detects and displays warnings for the use of the following Flutter 
 - **TextField, TextFormField** - Recommends using custom input fields
 - **Card** - Recommends using custom cards
 - **Colors** - Recommends using custom color definitions from your design system
+- **Color** - Recommends using custom color definitions instead of Color constructor
 
 ## Requirements
 
@@ -65,6 +66,7 @@ plugins:
       ban_textformfield_widget: true
       ban_card_widget: true
       ban_colors: true
+      ban_color: true
 ```
 
 ### 2. Run Analysis

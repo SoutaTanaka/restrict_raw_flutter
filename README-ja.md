@@ -19,6 +19,7 @@ Dart 3.10で追加されたAnalyzer Plugins機能を利用しており、標準�
 - **TextField, TextFormField** - カスタム入力フィールドの使用を推奨
 - **Card** - カスタムカードの使用を推奨
 - **Colors** - デザインシステムのカスタム色定義の使用を推奨
+- **Color** - Colorコンストラクタの代わりにカスタム色定義の使用を推奨
 
 ## 環境要件
 
@@ -65,6 +66,7 @@ plugins:
       ban_textformfield_widget: true
       ban_card_widget: true
       ban_colors: true
+      ban_color: true
 ```
 
 ### 2. 解析の実行
