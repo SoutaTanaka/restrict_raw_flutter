@@ -1,6 +1,8 @@
-import '../utils/rule_base.dart';
+import 'package:restrict_raw_flutter/src/utils/rule_base.dart';
 
+/// Rule to ban usage of Flutter's Text widget.
 class BanTextRule extends WidgetBanRuleBase {
+  /// Creates a new [BanTextRule] instance.
   BanTextRule()
     : super(
         ruleName: 'ban_text_widget',

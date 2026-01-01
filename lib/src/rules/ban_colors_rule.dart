@@ -5,17 +5,19 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:analyzer/error/error.dart';
 
-/// Rule to ban usage of Flutter's Colors class
+/// Rule to ban usage of Flutter's Colors class.
 class BanColorsRule extends AnalysisRule {
+  /// Creates a new [BanColorsRule] instance.
   BanColorsRule()
     : super(
         name: 'ban_colors',
         description:
-            'Usage of Colors class is prohibited. Use custom color definitions from your design system instead.',
+            'Usage of Colors class is prohibited. '
+            'Use custom color definitions from your design system instead.',
       );
 
   @override
-  LintCode get diagnosticCode => LintCode(
+  LintCode get diagnosticCode => const LintCode(
     'ban_colors',
     'Usage of Colors class is prohibited.',
     correctionMessage:
@@ -28,16 +30,16 @@ class BanColorsRule extends AnalysisRule {
     RuleContext context,
   ) {
     final visitor = _BanColorsVisitor(this, context);
-    registry.addPrefixedIdentifier(this, visitor);
-    registry.addPropertyAccess(this, visitor);
+    registry
+      ..addPrefixedIdentifier(this, visitor)
+      ..addPropertyAccess(this, visitor);
   }
 }
 
 class _BanColorsVisitor extends SimpleAstVisitor<void> {
+  _BanColorsVisitor(this.rule, this.context);
   final AnalysisRule rule;
   final RuleContext context;
-
-  _BanColorsVisitor(this.rule, this.context);
 
   @override
   void visitPrefixedIdentifier(PrefixedIdentifier node) {

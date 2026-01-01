@@ -7,10 +7,10 @@ class BanScaffoldRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class Scaffold extends StatelessWidget {}
@@ -20,9 +20,9 @@ class Container extends StatelessWidget {}
     super.setUp();
   }
 
-  void test_hasScaffold() async {
+  Future<void> test_hasScaffold() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,8 +33,8 @@ void main() {
     );
   }
 
-  void test_noScaffold() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noScaffold() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {

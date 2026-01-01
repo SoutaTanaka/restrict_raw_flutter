@@ -11,17 +11,16 @@
 # (the recommended set includes the core lints).
 # The core lints are also what is used by pub.dev for scoring packages.
 
-include: package:lints/recommended.yaml
+include: package:very_good_analysis/analysis_options.yaml
 
-# Uncomment the following section to specify additional rules.
+analyzer:
+  exclude:
+    - example/**
 
-# linter:
-#   rules:
-#     - camel_case_types
-
-# analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+linter:
+  rules:
+    # test_reflective_loader requires test methods to start with test_
+    non_constant_identifier_names: false
 
 # For more information about the core and recommended set of lints, see
 # https://dart.dev/go/core-lints

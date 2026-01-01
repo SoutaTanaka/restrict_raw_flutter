@@ -1,6 +1,8 @@
-import '../utils/rule_base.dart';
+import 'package:restrict_raw_flutter/src/utils/rule_base.dart';
 
+/// Rule to ban usage of Flutter's Icon widget.
 class BanIconRule extends WidgetBanRuleBase {
+  /// Creates a new [BanIconRule] instance.
   BanIconRule()
     : super(
         ruleName: 'ban_icon_widget',

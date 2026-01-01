@@ -1,6 +1,8 @@
-import '../utils/rule_base.dart';
+import 'package:restrict_raw_flutter/src/utils/rule_base.dart';
 
+/// Rule to ban usage of Flutter's AppBar widget.
 class BanAppBarRule extends WidgetBanRuleBase {
+  /// Creates a new [BanAppBarRule] instance.
   BanAppBarRule()
     : super(
         ruleName: 'ban_appbar_widget',

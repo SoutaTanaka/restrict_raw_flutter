@@ -7,7 +7,7 @@ class BanColorsRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 
 class Colors {
@@ -20,7 +20,7 @@ class Color {
   const Color(int value);
 }
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class Container extends StatelessWidget {
@@ -31,9 +31,9 @@ class Container extends StatelessWidget {
     super.setUp();
   }
 
-  void test_hasColorsRed() async {
+  Future<void> test_hasColorsRed() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,9 +44,9 @@ void main() {
     );
   }
 
-  void test_hasColorsBlue() async {
+  Future<void> test_hasColorsBlue() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -57,9 +57,9 @@ void main() {
     );
   }
 
-  void test_colorsInWidget() async {
+  Future<void> test_colorsInWidget() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 class MyWidget extends StatelessWidget {
@@ -72,8 +72,8 @@ class MyWidget extends StatelessWidget {
     );
   }
 
-  void test_noColors() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noColors() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 const myRed = Color(0xFFFF0000);
@@ -84,8 +84,8 @@ void main() {
 ''');
   }
 
-  void test_customColorsClass() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_customColorsClass() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 class MyColors {

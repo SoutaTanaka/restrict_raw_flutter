@@ -3,15 +3,19 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:analyzer/dart/element/element.dart';
 
-/// A common visitor to detect usage of Flutter's standard widgets
+/// A common visitor to detect usage of Flutter's standard widgets.
 ///
-/// Monitors instance creation expressions and detects usage of Flutter's standard widgets
-/// with the specified class name.
+/// Monitors instance creation expressions and detects usage of
+/// Flutter's standard widgets with the specified class name.
 class WidgetBanVisitor extends SimpleAstVisitor<void> {
-  final AnalysisRule rule;
-  final String widgetName;
-
+  /// Creates a new [WidgetBanVisitor] instance.
   WidgetBanVisitor(this.rule, this.widgetName);
+
+  /// The analysis rule to report diagnostics.
+  final AnalysisRule rule;
+
+  /// The widget name to ban.
+  final String widgetName;
 
   @override
   void visitInstanceCreationExpression(InstanceCreationExpression node) {

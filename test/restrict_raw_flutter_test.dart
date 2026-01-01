@@ -1,18 +1,18 @@
 import 'package:test/test.dart';
 
-// Import all rule tests
-import 'ban_text_rule_test.dart' as ban_text_rule_test;
-import 'ban_container_rule_test.dart' as ban_container_rule_test;
+import 'ban_appbar_rule_test.dart' as ban_appbar_rule_test;
 import 'ban_button_rule_test.dart' as ban_button_rule_test;
+import 'ban_card_rule_test.dart' as ban_card_rule_test;
+import 'ban_container_rule_test.dart' as ban_container_rule_test;
+import 'ban_gesture_detector_rule_test.dart' as ban_gesture_detector_rule_test;
 import 'ban_icon_rule_test.dart' as ban_icon_rule_test;
 import 'ban_image_rule_test.dart' as ban_image_rule_test;
-import 'ban_scaffold_rule_test.dart' as ban_scaffold_rule_test;
-import 'ban_appbar_rule_test.dart' as ban_appbar_rule_test;
-import 'ban_listview_rule_test.dart' as ban_listview_rule_test;
-import 'ban_textfield_rule_test.dart' as ban_textfield_rule_test;
-import 'ban_card_rule_test.dart' as ban_card_rule_test;
-import 'ban_gesture_detector_rule_test.dart' as ban_gesture_detector_rule_test;
 import 'ban_inkwell_rule_test.dart' as ban_inkwell_rule_test;
+import 'ban_listview_rule_test.dart' as ban_listview_rule_test;
+import 'ban_scaffold_rule_test.dart' as ban_scaffold_rule_test;
+// Import all rule tests
+import 'ban_text_rule_test.dart' as ban_text_rule_test;
+import 'ban_textfield_rule_test.dart' as ban_textfield_rule_test;
 import 'plugin_test.dart' as plugin_test;
 
 void main() {

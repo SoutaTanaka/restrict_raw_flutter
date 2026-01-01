@@ -7,10 +7,10 @@ class BanElevatedButtonRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class ElevatedButton extends StatelessWidget {
@@ -31,9 +31,9 @@ class Text extends StatelessWidget {
     super.setUp();
   }
 
-  void test_hasElevatedButton() async {
+  Future<void> test_hasElevatedButton() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,8 +44,8 @@ void main() {
     );
   }
 
-  void test_noElevatedButton() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noElevatedButton() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,10 +60,10 @@ class BanTextButtonRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class ElevatedButton extends StatelessWidget {
@@ -84,9 +84,9 @@ class Text extends StatelessWidget {
     super.setUp();
   }
 
-  void test_hasTextButton() async {
+  Future<void> test_hasTextButton() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -97,8 +97,8 @@ void main() {
     );
   }
 
-  void test_noTextButton() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noTextButton() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -113,10 +113,10 @@ class BanOutlinedButtonRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class ElevatedButton extends StatelessWidget {
@@ -137,9 +137,9 @@ class Text extends StatelessWidget {
     super.setUp();
   }
 
-  void test_hasOutlinedButton() async {
+  Future<void> test_hasOutlinedButton() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -150,8 +150,8 @@ void main() {
     );
   }
 
-  void test_noOutlinedButton() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noOutlinedButton() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {
