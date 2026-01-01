@@ -73,8 +73,7 @@ class MyWidget extends StatelessWidget {
   }
 
   void test_noColors() async {
-    await assertNoDiagnostics(
-      r'''
+    await assertNoDiagnostics(r'''
 import 'package:flutter/material.dart';
 
 const myRed = Color(0xFFFF0000);
@@ -82,13 +81,11 @@ const myRed = Color(0xFFFF0000);
 void main() {
   var color = myRed;
 }
-''',
-    );
+''');
   }
 
   void test_customColorsClass() async {
-    await assertNoDiagnostics(
-      r'''
+    await assertNoDiagnostics(r'''
 import 'package:flutter/material.dart';
 
 class MyColors {
@@ -98,8 +95,7 @@ class MyColors {
 void main() {
   var color = MyColors.red;
 }
-''',
-    );
+''');
   }
 }
 
@@ -108,4 +104,3 @@ void main() {
     defineReflectiveTests(BanColorsRuleTest);
   });
 }
-

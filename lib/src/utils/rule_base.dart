@@ -21,23 +21,17 @@ abstract class WidgetBanRuleBase extends AnalysisRule {
   /// Correction message
   final String correctionMessage;
 
-
   WidgetBanRuleBase({
     required this.ruleName,
     required this.widgetName,
     required this.errorMessage,
     required this.correctionMessage,
     required super.description,
-  }) : super(
-          name: ruleName,
-        );
+  }) : super(name: ruleName);
 
   @override
-  LintCode get diagnosticCode => LintCode(
-        ruleName,
-        errorMessage,
-        correctionMessage: correctionMessage,
-      );
+  LintCode get diagnosticCode =>
+      LintCode(ruleName, errorMessage, correctionMessage: correctionMessage);
 
   @override
   void registerNodeProcessors(
@@ -50,4 +44,3 @@ abstract class WidgetBanRuleBase extends AnalysisRule {
     );
   }
 }
-

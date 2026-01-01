@@ -8,19 +8,19 @@ import 'package:analyzer/error/error.dart';
 /// Rule to ban usage of Flutter's Colors class
 class BanColorsRule extends AnalysisRule {
   BanColorsRule()
-      : super(
-          name: 'ban_colors',
-          description:
-              'Usage of Colors class is prohibited. Use custom color definitions from your design system instead.',
-        );
+    : super(
+        name: 'ban_colors',
+        description:
+            'Usage of Colors class is prohibited. Use custom color definitions from your design system instead.',
+      );
 
   @override
   LintCode get diagnosticCode => LintCode(
-        'ban_colors',
-        'Usage of Colors class is prohibited.',
-        correctionMessage:
-            'Use custom color definitions from your design system instead.',
-      );
+    'ban_colors',
+    'Usage of Colors class is prohibited.',
+    correctionMessage:
+        'Use custom color definitions from your design system instead.',
+  );
 
   @override
   void registerNodeProcessors(
@@ -55,11 +55,11 @@ class _BanColorsVisitor extends SimpleAstVisitor<void> {
   void _checkColorsUsage(SimpleIdentifier identifier, AstNode node) {
     // Check if the identifier name is 'Colors'
     if (identifier.name != 'Colors') return;
-    
+
     // Check if it's from Flutter by examining the compilation unit's imports
     final compilationUnit = node.thisOrAncestorOfType<CompilationUnit>();
     if (compilationUnit == null) return;
-    
+
     // Check if any import is from Flutter
     for (final directive in compilationUnit.directives) {
       if (directive is ImportDirective) {
@@ -72,4 +72,3 @@ class _BanColorsVisitor extends SimpleAstVisitor<void> {
     }
   }
 }
-

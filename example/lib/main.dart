@@ -54,9 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // This Text will trigger ban_text_widget warning
-            Text(
-              'You have pushed the button this many times:',
-            ),
+            Text('You have pushed the button this many times:'),
             // This Text will trigger ban_text_widget warning
             Text(
               '$_counter',
@@ -111,16 +109,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Outlined Button'),
             ),
             // This TextField will trigger ban_textfield_widget warning
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Enter text',
-              ),
-            ),
+            TextField(decoration: InputDecoration(labelText: 'Enter text')),
             // This TextFormField will trigger ban_textformfield_widget warning
             TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Enter form text',
-              ),
+              decoration: InputDecoration(labelText: 'Enter form text'),
             ),
             // This GestureDetector will trigger ban_gesture_detector_widget warning
             GestureDetector(
@@ -134,11 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // This Text will trigger ban_text_widget warning
               child: Text('InkWell'),
             ),
-            Container(
-              width: 50,
-              height: 50,
-              color: Color(0xFF000000),
-            ),
+            Container(width: 50, height: 50, color: Color(0xFF000000)),
           ],
         ),
       ),
@@ -151,4 +139,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

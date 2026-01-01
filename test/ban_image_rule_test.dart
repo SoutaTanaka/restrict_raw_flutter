@@ -6,9 +6,11 @@ import 'package:test_reflective_loader/test_reflective_loader.dart';
 class BanImageRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
-    newPackage('flutter')..addFile('lib/material.dart', r'''
+    newPackage('flutter')
+      ..addFile('lib/material.dart', r'''
 export 'package:flutter/widgets.dart';
-''')..addFile('lib/widgets.dart', r'''
+''')
+      ..addFile('lib/widgets.dart', r'''
 class Widget {}
 class StatelessWidget extends Widget {}
 class Image extends StatelessWidget {
@@ -34,15 +36,13 @@ void main() {
   }
 
   void test_noImage() async {
-    await assertNoDiagnostics(
-      r'''
+    await assertNoDiagnostics(r'''
 import 'package:flutter/material.dart';
 
 void main() {
   Container();
 }
-''',
-    );
+''');
   }
 }
 
@@ -51,4 +51,3 @@ void main() {
     defineReflectiveTests(BanImageRuleTest);
   });
 }
-

@@ -1,0 +1,60 @@
+{
+  // Dart & Flutter設定
+  "dart.lineLength": 80,
+  "dart.enableSdkFormatter": true,
+  "dart.enableSnippets": true,
+  "dart.analysisExcludedFolders": [
+    ".dart_tool",
+    "build"
+  ],
+
+  // エディタ設定
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // ファイル設定
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.packages": true,
+    "**/pubspec.lock": false
+  },
+  "files.watcherExclude": {
+    "**/.dart_tool/**": true,
+    "**/build/**": true
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // 検索設定
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true,
+    "**/*.freezed.dart": true,
+    "**/*.g.dart": true
+  },
+
+  // Dart Test設定
+  "dart.testExcludeRegex": "^$",
+
+  // その他
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.wordBasedSuggestions": "off"
+  }
+}
+
+
