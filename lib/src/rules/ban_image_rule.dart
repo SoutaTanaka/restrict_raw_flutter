@@ -1,6 +1,8 @@
-import '../utils/rule_base.dart';
+import 'package:restrict_raw_flutter/src/utils/rule_base.dart';
 
+/// Rule to ban usage of Flutter's Image widget.
 class BanImageRule extends WidgetBanRuleBase {
+  /// Creates a new [BanImageRule] instance.
   BanImageRule()
     : super(
         ruleName: 'ban_image_widget',

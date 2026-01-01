@@ -3,12 +3,21 @@ import 'package:analyzer/analysis_rule/rule_context.dart';
 import 'package:analyzer/analysis_rule/rule_visitor_registry.dart';
 import 'package:analyzer/error/error.dart';
 
-import 'widget_visitor.dart';
+import 'package:restrict_raw_flutter/src/utils/widget_visitor.dart';
 
 /// Base class for widget ban rules
 ///
 /// Provides common logic, and each rule extends this class to implement.
 abstract class WidgetBanRuleBase extends AnalysisRule {
+  /// Creates a new [WidgetBanRuleBase] instance.
+  WidgetBanRuleBase({
+    required this.ruleName,
+    required this.widgetName,
+    required this.errorMessage,
+    required this.correctionMessage,
+    required super.description,
+  }) : super(name: ruleName);
+
   /// Rule name
   final String ruleName;
 
@@ -20,14 +29,6 @@ abstract class WidgetBanRuleBase extends AnalysisRule {
 
   /// Correction message
   final String correctionMessage;
-
-  WidgetBanRuleBase({
-    required this.ruleName,
-    required this.widgetName,
-    required this.errorMessage,
-    required this.correctionMessage,
-    required super.description,
-  }) : super(name: ruleName);
 
   @override
   LintCode get diagnosticCode =>

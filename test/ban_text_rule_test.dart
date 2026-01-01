@@ -7,10 +7,10 @@ class BanTextRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class Text extends StatelessWidget {
@@ -22,9 +22,9 @@ class Container extends StatelessWidget {}
     super.setUp();
   }
 
-  void test_hasText() async {
+  Future<void> test_hasText() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,8 +35,8 @@ void main() {
     );
   }
 
-  void test_noText() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noText() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,9 +45,9 @@ void main() {
 ''');
   }
 
-  void test_textInWidget() async {
+  Future<void> test_textInWidget() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 class MyWidget extends StatelessWidget {

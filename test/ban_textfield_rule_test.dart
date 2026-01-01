@@ -7,10 +7,10 @@ class BanTextFieldRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class TextField extends StatelessWidget {}
@@ -21,9 +21,9 @@ class Container extends StatelessWidget {}
     super.setUp();
   }
 
-  void test_hasTextField() async {
+  Future<void> test_hasTextField() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,8 +34,8 @@ void main() {
     );
   }
 
-  void test_noTextField() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noTextField() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,10 +50,10 @@ class BanTextFormFieldRuleTest extends AnalysisRuleTest {
   @override
   void setUp() {
     newPackage('flutter')
-      ..addFile('lib/material.dart', r'''
+      ..addFile('lib/material.dart', '''
 export 'package:flutter/widgets.dart';
 ''')
-      ..addFile('lib/widgets.dart', r'''
+      ..addFile('lib/widgets.dart', '''
 class Widget {}
 class StatelessWidget extends Widget {}
 class TextField extends StatelessWidget {}
@@ -64,9 +64,9 @@ class Container extends StatelessWidget {}
     super.setUp();
   }
 
-  void test_hasTextFormField() async {
+  Future<void> test_hasTextFormField() async {
     await assertDiagnostics(
-      r'''
+      '''
 import 'package:flutter/material.dart';
 
 void main() {
@@ -77,8 +77,8 @@ void main() {
     );
   }
 
-  void test_noTextFormField() async {
-    await assertNoDiagnostics(r'''
+  Future<void> test_noTextFormField() async {
+    await assertNoDiagnostics('''
 import 'package:flutter/material.dart';
 
 void main() {

@@ -4,19 +4,22 @@ import 'package:analyzer/analysis_rule/rule_visitor_registry.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/visitor.dart';
 import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart';
 
-/// Rule to ban usage of Flutter's Color constructor
+/// Rule to ban usage of Flutter's Color constructor.
 class BanColorRule extends AnalysisRule {
+  /// Creates a new [BanColorRule] instance.
   BanColorRule()
     : super(
         name: 'ban_color',
         description:
-            'Color constructor is prohibited. Use custom color definitions instead.',
+            'Color constructor is prohibited. '
+            'Use custom color definitions instead.',
       );
 
   @override
-  LintCode get diagnosticCode => LintCode(
+  LintCode get diagnosticCode => const LintCode(
     'ban_color',
     'Usage of Color constructor is prohibited.',
     correctionMessage:
@@ -29,15 +32,15 @@ class BanColorRule extends AnalysisRule {
     RuleContext context,
   ) {
     final visitor = _BanColorVisitor(this);
-    registry.addInstanceCreationExpression(this, visitor);
-    registry.addMethodInvocation(this, visitor);
+    registry
+      ..addInstanceCreationExpression(this, visitor)
+      ..addMethodInvocation(this, visitor);
   }
 }
 
 class _BanColorVisitor extends SimpleAstVisitor<void> {
-  final AnalysisRule rule;
-
   _BanColorVisitor(this.rule);
+  final AnalysisRule rule;
 
   @override
   void visitInstanceCreationExpression(InstanceCreationExpression node) {
@@ -64,7 +67,7 @@ class _BanColorVisitor extends SimpleAstVisitor<void> {
     }
   }
 
-  void _checkColorUsage(dynamic type, AstNode node) {
+  void _checkColorUsage(DartType? type, AstNode node) {
     if (type == null) return;
 
     final element = type.element;
