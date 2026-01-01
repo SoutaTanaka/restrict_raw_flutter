@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Fix: Resolved all lint warnings (added documentation, fixed line lengths, cascade invocations, sorted dependencies)
+
 ## 0.2.0
 
 - Add: BanColorRule - Restricts usage of Color constructor (e.g., Color(0xFF000000), Color.fromARGB(), Color.fromRGBO())
