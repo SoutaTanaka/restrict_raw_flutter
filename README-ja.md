@@ -29,7 +29,7 @@ Dart 3.10で追加されたAnalyzer Plugins機能を利用しており、標準�
 `pubspec.yaml` に以下の依存関係を追加してください：
 
 ```yaml
-dependencies:
+dev_dependencies:
   restrict_raw_flutter:
     path: ../restrict_raw_flutter  # または適切なパス
 ```
@@ -47,7 +47,7 @@ include: package:flutter_lints/flutter.yaml
 
 plugins:
   restrict_raw_flutter:
-    path: ../restrict_raw_flutter  # パッケージへのパス
+    version: ^0.0.1
     diagnostics:
       ban_text_widget: true
       ban_container_widget: true

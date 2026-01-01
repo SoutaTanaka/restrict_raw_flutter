@@ -29,7 +29,7 @@ This package detects and displays warnings for the use of the following Flutter 
 Add the following dependency to your `pubspec.yaml`:
 
 ```yaml
-dependencies:
+dev_dependencies:
   restrict_raw_flutter:
     path: ../restrict_raw_flutter  # or appropriate path
 ```
@@ -47,7 +47,7 @@ include: package:flutter_lints/flutter.yaml
 
 plugins:
   restrict_raw_flutter:
-    path: ../restrict_raw_flutter  # path to the package
+    version: ^0.0.1
     diagnostics:
       ban_text_widget: true
       ban_container_widget: true
