@@ -25,17 +25,6 @@ Dart 3.10で追加されたAnalyzer Plugins機能を利用しており、標準�
 
 - Dart SDK: 3.10.0 以上
 - Flutter: 3.38.0 以上
-
-## インストール
-
-`pubspec.yaml` に以下の依存関係を追加してください：
-
-```yaml
-dev_dependencies:
-  restrict_raw_flutter:
-    version: ^0.0.1 # パッケージのバージョンを指定
-```
-
 その後、`dart pub get` を実行してください。
 
 ## 使用方法
@@ -49,7 +38,7 @@ include: package:flutter_lints/flutter.yaml
 
 plugins:
   restrict_raw_flutter:
-    version: ^0.0.1
+    version: ^latestVersion
     diagnostics:
       ban_text_widget: true
       ban_container_widget: true

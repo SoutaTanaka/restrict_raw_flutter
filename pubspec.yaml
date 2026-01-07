@@ -1,6 +1,6 @@
 name: restrict_raw_flutter
 description: An analyzer plugin to restrict usage of Flutter's standard widgets and encourage using custom design system components.
-version: 0.2.1
+version: 0.2.1+1
 repository: https://github.com/SoutaTanaka/restrict_raw_flutter
 website: https://x.com/_sotaatos
 

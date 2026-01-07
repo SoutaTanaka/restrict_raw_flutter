@@ -26,18 +26,6 @@ This package detects and displays warnings for the use of the following Flutter 
 - Dart SDK: 3.10.0 or higher
 - Flutter: 3.38.0 or higher
 
-## Installation
-
-Add the following dependency to your `pubspec.yaml`:
-
-```yaml
-dev_dependencies:
-  restrict_raw_flutter:
-    version: ^0.0.1 # specify the package version
-```
-
-Then run `dart pub get`.
-
 ## Usage
 
 ### 1. Configure analysis_options.yaml
@@ -49,7 +37,7 @@ include: package:flutter_lints/flutter.yaml
 
 plugins:
   restrict_raw_flutter:
-    version: ^0.0.1
+    version: ^latestVersion
     diagnostics:
       ban_text_widget: true
       ban_container_widget: true
